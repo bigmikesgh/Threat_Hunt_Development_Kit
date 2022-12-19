@@ -6,19 +6,19 @@ import analytic_builder
 def main_menu_init():
     os.system('cls') # Clears Screen
     # Creates main menu
-    print("Welcome to the TH-ADK v0.01, the Threat Hunt Analytics Development Kit\n\n")
+    print("Welcome to the TH-DK v0.01, the Threat Hunt Development Kit\n\n")
     print("""                                   _----..................___
      __,,..,-====>       _,.--''------'' |   _____  ______________`''--._
      \      `\   __..--''                |  /::: / /::::::::::::::\      \
       \       `''                        \r\t\t\t\t\t\t\t\t| /____/ /___ ____ _____::|    .  \r
-       \         TH-ADK    ,.... |            `    `     \_|   ( )  |
+       \         TH-DK    ,.... |            `    `     \_|   ( )  |
         `.                       /`     `.\ ,,''`'- ,.----------.._     `   |
           `.                     |        ,'       `               `-.      |
             `-._                 \                                    ``.. /""")
     print(Fore.RED + "\t\t\t\t`---..............>")  # Adds a little blood to the blade
     print(Style.RESET_ALL) # Resets the color back to regular
 
-    print("""1) Analytic builder
+    print("""1) Analytic Workspace
 2) View analytics by MITRE mapping
 3) Write analytics to a file
 4) Build hunt plan
@@ -26,19 +26,21 @@ def main_menu_init():
 0) Exit TH-ADK""")
 
 
-def analytic_builder_menu():
+def analytic_workspace_menu():
+    analytic = []
     while True:
-        print("1) Build Analytic")
+        print("\n1) Build Analytic")
         print("2) Import Analytic")
-        print("3) View Analytic")
+        print("3) View Analytics")
         print("4) Edit Analytics")
+        print("5) Save Analytic")
         print("9) Return to main menu")
 
-        selection = input("Enter selection: ")
+        selection = input("\nEnter selection: ")
 
         if selection == '1':
-            print("Entering build mode...\n")
-            analytic_builder.build_analytic()
+            print("\nEntering build mode...\n")
+            analytic.append(analytic_builder.build_analytic())
         elif selection == '2':
             print("Create import analytic function")
         elif selection == '3':
